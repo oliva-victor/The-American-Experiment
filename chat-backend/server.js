@@ -391,13 +391,14 @@ app.get('/presurveyanswers', async(req, res) => {
 
 // Handle waiting room logic via GET
 app.get('/waitingroom', async (req, res) => {
-    const { username, philosophy } = req.query;
-
-    if (!username || !philosophy) {
-        return res.status(400).json({ error: 'Username and philosophy are required.' });
-    }
+    const { username } = req.query;
 
     try {
+        const philosophy = await Presurvey.findOne({
+            where: { username: username },
+            attributes: ['philosophy']
+        });
+
         // Define opposing philosophies
         let opposing_philosophies;
         if (philosophy === "RR" || philosophy === "R") {
