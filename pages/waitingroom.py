@@ -17,13 +17,7 @@ st.write("We're looking for your match. Press the button below to check if we fo
 if st.button("Press me!"):
     response = requests.get(f"http://localhost:3000/waitingroom?username={username}")
 
-    st.success(response.status_code)
-    
-    if response.status_code == 200:
-        data = response.json()
-        if 'username2' in data:
-            switch_page("next_page.py")
-        else:
-            st.info("We're still looking.")  # Message when no suitable user2 is found
+    if response.status_code != 200:
+        st.info("We're still looking.")
     else:
-        st.error("Looks like we've encountered an error.")
+        switch_page("chatroom")
