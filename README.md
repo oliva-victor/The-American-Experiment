@@ -5,6 +5,6 @@ The American Experiment is an app that aims to bring people of different politic
 
 The American Experiment allows you to talk about your hobbies and your memories without worrying about whether or not your buddy supports abortion. It teaches tolerance, it teaches inclusion, but most importantly it teaches love. And that’s exactly the purpose of this app.
 
-This app was created using Python and JavaScript. Libraries used include: Streamlit, Requests, and Streamlit Extras.
+This app was created using Python and JavaScript. Libraries used include: Streamlit, Requests, Streamlit_Extras, Bycrypt, Sequelize.
 
 Enjoy.
